@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Employees Table</h1>
+            <ul>
+                {% for emp in employees %}
+                     <li>{{emp.name}} -- {{emp.salary}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>

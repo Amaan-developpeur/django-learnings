@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>
+            body{
+                text-align: center;
+                background-color: black;
+                color: whitesmoke;
+                border-width: 2px;
+                border-radius: 2px;
+                border-color: brown;
+                border-style: solid;
+                padding: 10px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Employee List</h1>
+            <ul>
+                {% for emp in employees %}
+                    <li>{{ emp.name }} -- {{ emp.username }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>

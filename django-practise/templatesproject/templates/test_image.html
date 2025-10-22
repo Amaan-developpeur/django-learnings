@@ -1,0 +1,54 @@
+{% load static %}
+<! DOCTYPE HTML>
+<html>
+    <head>
+        <title>Static File Exercise</title>
+    </head>
+    <style>
+        body{
+            color: whitesmoke;
+            background-color: black;
+            border-width: 5px;
+            border-style: solid;
+            border-color: blueviolet;
+        }
+        
+    </style>
+    <body>
+        <div id="mia" style="text-align: center; border-width: 2px; border-style: dashed; border-color: chocolate;">
+            <h1>Static Files Exercise</h1>
+        </div>
+        <div style="padding: 5px; display: inline-block; border-style: solid; border-color: brown;"> 
+            <img width="250px" height="300px" src="{% static 'images/mia.jpg' %}">
+            <p>Mia Melano</p>
+        </div>
+        <div class="alison" style="padding:5px; display: inline-block;border-style: solid; border-color: brown;">
+            <img width="250px" height="300px" src="{% static 'images/Alison2.jpg' %} ">
+            <p>Alison Tyler</p>
+        </div>
+        <div style="padding:5px; display: inline-block;border-style: solid; border-color: brown;">
+            <img width="250px" height="300px" src="{% static 'images/Alana.jpg' %} ">
+            <p>Alana Rae</p>
+        </div>
+        <div style="padding:5px; display: inline-block;border-style: solid; border-color: brown;">
+            <img width="250px" height="300px" src="{% static 'images/kendra.jpg' %} ">
+            <p>Kendra Sunderland</p>
+        </div>
+        <div style="padding:5px; display: inline-block;border-style: solid; border-color: brown;">
+            <img width="250px" height="300px" src="{% static 'images/carolina.jpg' %} ">
+            <p>Carolina Munuz</p>
+        </div>
+        <div style="padding:5px; display: inline-block;border-style: solid; border-color: brown;">
+            <img width="250px" height="300px" src="{% static 'images/harley.jpg' %} ">
+            <p>Harley Rain</p>
+        </div>
+        <div style="padding:5px; display: inline-block;border-style: solid; border-color: brown;">
+            <img width="250px" height="300px" src="{% static 'images/peta.jpg' %} ">
+            <p>Peta Jensen</p>
+        </div>
+        <div style="padding:5px; display: inline-block;border-style: solid; border-color: brown;">
+            <img width="250px" height="300px" src="{% static 'images/erica.jpg' %} ">
+            <p>Erica J</p>
+        </div>
+    </body>
+</html>

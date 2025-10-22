@@ -1,0 +1,49 @@
+<! DOCTYPE HTML>
+<html>
+    <head>
+        <title>Employee Registration Application [CRUD Exercise]</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: black;
+                color: whitesmoke;
+                border-width: 2px;
+                border-radius: 2px;
+                border-color: brown;
+                border-style: solid;
+            }
+            .Form{
+                text-align: left;
+                padding: 10px;
+                border-width: 2px;
+                border-radius: 2px;
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Employee Registration [CRUD Exercise]</h1>
+            <hr style="color: brown;">
+        </div>
+        <div class="Form">
+            <form action="{% url 'crud' %}" method="post">
+                {% csrf_token %}
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="username">UserName</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="pw">Password</label><br>
+                <input type="text" id="pw" name="pw"><br><br>
+                <input type="submit" value="Register/Create" name="button">
+                <input type="submit" value="Update" name="button">
+                <input type="submit" value="Delete" name="button">
+                <input type="submit" value="Retreive" name="button"> 
+            </form>
+            <br>
+            {{msg}}
+        
+            <hr>
+        </div>
+    </body>
+</html>

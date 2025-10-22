@@ -1,0 +1,43 @@
+<! DOCTYPE HTML>
+<html>
+    <head>
+        <title>Employee Registration Project</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: black;
+                color: whitesmoke;
+                border-width: 2px;
+                border-style: solid;
+                padding: 2px;
+            }
+            #Form{
+                text-align: left;
+                padding: 5px;
+                padding-left: 5px;
+                border-width: 5px;
+                border-color: brown;
+                border-style: solid;
+
+
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Employee Registration Application</h1>
+        </div>
+        <div id="Form">
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="username">User Name</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="pw">Password</label><br>
+                <input type="text" id="pw" name="pw"><br><br>
+                <input type="submit" value="Register" name="submit">
+            </form>
+        </div>
+    </body>
+</html>

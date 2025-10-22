@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Calculator Application</title>
+    <style>
+        body {
+            text-align: center;
+            color: whitesmoke;
+            background-color: black;
+            border-width: 5px;
+            border-style: solid;
+            border-color: blueviolet;
+        }
+        #Form {
+            text-align: left;
+            border-width: 5px;
+            padding: 10px;
+            border-color: bisque;
+            border-style: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Calculator Application</h3>
+    </div>
+    <div id="Form">
+        <form method="get" action="{% url 'calculate' %}">
+            <label for="num1">Value 1</label><br>
+            <input type="number" id="num1" name="num1"><br>
+            <label for="num2">Value 2</label><br>
+            <input type="number" id="num2" name="num2"><br><br>
+            <input type="submit" name="button" value="ADD">
+            <input type="submit" name="button" value="SUB">
+            <input type="submit" name="button" value="MUL">
+            <input type="submit" name="button" value="DIV">
+        </form>
+    </div>
+</body>
+</html>

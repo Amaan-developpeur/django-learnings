@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+            body{
+                text-align: left;
+                border-radius: 5px;
+                border-width: 5px;
+                border-style: solid;
+                color: whitesmoke;
+                background-color: black;
+            }
+            .Form{
+                border-radius: 5px;
+                padding: 5px;
+                border-width: 5px;
+                border-color: brown;
+                border-style: solid;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Create Employess</h1>
+        <div class="Form">
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" value="Create">Create</button>
+                 
+            </form>
+        </div>
+        {{msg}}
+    </body>
+</html>
