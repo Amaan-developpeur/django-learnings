@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            body{
+                text-align: left;
+                border-radius: 2px;
+                border-width: 2px;
+                border-color: brown;
+                border-style: solid;
+                padding: 2px;
+                margin: 2px;
+                color: whitesmoke;
+                background-color: black;
+            }
+            .heading{
+                text-align: center;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #Form{
+                padding: 5px;
+                margin: 5px;
+                border-radius: 2px;
+                border-width: 2px;
+                border-color: brown;
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="heading">
+            <h1>Student Details Form</h1>
+        </div>
+        <div id="Form">
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <br>
+                <div style="padding-left: 5px; margin-left: 5px; border-width: 2px; border-color: brown;">
+                    <input type="submit" value="CREATE" name="button">
+                    <input type="submit" value="RETREIVE" name="button">
+                    <input type="submit" value="UPDATE" name="button">
+                    <input type="submit" value="DELETE" name="button">
+                </div>
+            </form>
+            {{msg}}
+        </div>
+    </body>
+</html>

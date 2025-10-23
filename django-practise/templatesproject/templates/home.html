@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Context and Jinja2Template Exercise</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: black;
+                color: whitesmoke;
+                border-style: solid;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="border-color: chocolate; border-style: solid;">
+            <h1>Welcome to the Django Templates Language Exercise</h1>
+        </div>
+        <div>
+            {% for name, age in people %}
+                <p>Hello, {{ name }}</p>
+                <p>You are {{ age }} years old.</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
