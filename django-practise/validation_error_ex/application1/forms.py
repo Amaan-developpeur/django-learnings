@@ -19,7 +19,7 @@ class StudentForm(ModelForm):
             },
             "phone": {
                 "required": "Phone number is required.",
-                "max_length": "Fuck",
+                "max_length": "Phone number must be 10 digits only.",
             },
         }
     
