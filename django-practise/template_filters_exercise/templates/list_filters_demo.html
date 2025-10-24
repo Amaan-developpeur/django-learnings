@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_filter %}
 
 {% block content %}
 <h1 style="text-align: center;">Django List Filters Demo</h1>
@@ -47,4 +48,24 @@
     </tbody>
 </table>
 
+<hr>
+<h2 style="text-align:center;">Custom Filter Demo</h2>
+<table border="1" cellpadding="8" style="width:100%; border-collapse: collapse; margin-top:10px;">
+    <thead>
+        <tr>
+            <th>Custom Filter</th>
+            <th>What it does</th>
+            <th>Example (Code)</th>
+            <th>Output</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>capitalize_first</code></td>
+            <td>Capitalizes the first letter of the given string.</td>
+            <td><code>{% templatetag openvariable %} "hello world"|capitalize_first {% templatetag closevariable %}</code></td>
+            <td>{{ "hello world"|capitalize_first }}</td>
+        </tr>
+    </tbody>
+</table>
 {% endblock %}

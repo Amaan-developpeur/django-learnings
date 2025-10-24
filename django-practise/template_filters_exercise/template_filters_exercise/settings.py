@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "syntax_intro",
     "textfilters",
     "numericfilters",
+    "listfilters",
 ]
 
 MIDDLEWARE = [
