@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1 style="text-align: center;">Filters</h1>
+<hr style="color: brown;">
+<h2>Basic Introduction</h2>
+<h3>1.1 Template Filters and How do they work</h3>
+<p>A template filter is a small, built in function that takes a value,
+     modifies it, and returns a new value for display.<br>
+     It is applied inside a display bracket using a pipe symbol ( | )<br>
+     Template Tags control the logic and Template Filters apply the Formatting.
+    </p>
+<p>This is a variable value: {{name}}</p>
+<p>After applying the upper filter: {{name | upper}}</p>
+<p>Applying more than one filter with arguements: {{name | upper | truncatechars:9 }}</p>
+
+
+
+{% endblock %}

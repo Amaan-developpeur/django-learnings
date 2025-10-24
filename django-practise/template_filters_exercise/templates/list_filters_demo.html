@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Django List Filters Demo</h1>
+<hr>
+
+<table border="1" cellpadding="8" style="width:100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Filter</th>
+            <th>What it does</th>
+            <th>Example (Code)</th>
+            <th>Output</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>length</code></td>
+            <td>Returns the number of items in a list</td>
+            <td><code>{% templatetag openvariable %} students|length {% templatetag closevariable %}</code></td>
+            <td>{{ students|length }}</td>
+        </tr>
+        <tr>
+            <td><code>first</code></td>
+            <td>Returns the first item in the list</td>
+            <td><code>{% templatetag openvariable %} students|first {% templatetag closevariable %}</code></td>
+            <td>{{ students|first }}</td>
+        </tr>
+        <tr>
+            <td><code>last</code></td>
+            <td>Returns the last item in the list</td>
+            <td><code>{% templatetag openvariable %} students|last {% templatetag closevariable %}</code></td>
+            <td>{{ students|last }}</td>
+        </tr>
+        <tr>
+            <td><code>slice</code></td>
+            <td>Extracts a portion of the list</td>
+            <td><code>{% templatetag openvariable %} students|slice:":3" {% templatetag closevariable %}</code></td>
+            <td>{{ students|slice:":3" }}</td>
+        </tr>
+        <tr>
+            <td><code>join</code></td>
+            <td>Joins list items into a string</td>
+            <td><code>{% templatetag openvariable %} students|join:", " {% templatetag closevariable %}</code></td>
+            <td>{{ students|join:", " }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

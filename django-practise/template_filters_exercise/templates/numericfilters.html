@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Django Template Numeric & Date/Time Filters Demo</h1>
+<hr>
+
+<!-- Context Variables -->
+{% comment %}
+In your view, make sure you pass:
+context = {
+    'num1': 15,
+    'num2': 4,
+    'pi_value': 3.141592,
+    'some_date': datetime(2025, 10, 24, 14, 30),
+}
+{% endcomment %}
+
+<h2>Numeric Filters</h2>
+
+<!-- Add Filter -->
+<p><strong>Code:</strong> <code>{{ num1|add:10 }}</code></p>
+<p><strong>Output:</strong> {{ num1|add:10 }}</p>
+
+<!-- Divisibleby Filter -->
+<p><strong>Code:</strong> <code>{{ num1|divisibleby:5 }}</code></p>
+<p><strong>Output:</strong> {{ num1|divisibleby:5 }}</p>
+
+<!-- Floatformat Filter -->
+<p><strong>Code:</strong> <code>{{ pi_value|floatformat:2 }}</code></p>
+<p><strong>Output:</strong> {{ pi_value|floatformat:2 }}</p>
+
+<hr>
+<h2>Date & Time Filters</h2>
+
+<!-- Date Filter -->
+<p><strong>Code:</strong> <code>{{ some_date|date:"Y-m-d" }}</code></p>
+<p><strong>Output:</strong> {{ some_date|date:"Y-m-d" }}</p>
+
+<!-- Time Filter -->
+<p><strong>Code:</strong> <code>{{ some_date|time:"H:i:s" }}</code></p>
+<p><strong>Output:</strong> {{ some_date|time:"H:i:s" }}</p>
+
+<!-- Timesince Filter -->
+<p><strong>Code:</strong> <code>{{ some_date|timesince }}</code></p>
+<p><strong>Output:</strong> {{ some_date|timesince }}</p>
+
+<hr>
+<p><em>Notes:</em></p>
+<ul>
+    <li><strong>add:</strong> adds a number to the variable</li>
+    <li><strong>divisibleby:</strong> returns True if variable divisible by given number</li>
+    <li><strong>floatformat:</strong> formats float to given decimal places</li>
+    <li><strong>date/time:</strong> formats datetime objects</li>
+    <li><strong>timesince:</strong> calculates approximate time since given datetime</li>
+</ul>
+
+{% endblock %}

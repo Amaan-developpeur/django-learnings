@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center;">Django Template Text Filters Demo</h1>
+<hr>
+
+<!-- Original variable -->
+<p><strong>Original variable:</strong> {{ name }}</p>
+
+<!-- Case Filters -->
+<p><strong>Uppercase:</strong> {{ "Mohammed Amaan"|upper }}</p>
+<p><strong>Lowercase:</strong> {{ "Mohammed Amaan"|lower }}</p>
+<p><strong>Title Case:</strong> {{ "mohammed amaan"|title }}</p>
+
+<hr>
+
+<!-- Truncation Filters -->
+<p><strong>Truncate Characters (8 chars max):</strong> {{ "Mohammed Amaan"|truncatechars:8 }}</p>
+<p><strong>Truncate Words (2 words max):</strong> {{ "Mohammed Amaan"|truncatewords:2 }}</p>
+
+<hr>
+
+<!-- Safe and Escape Filters -->
+<p><strong>Safe Filter:</strong> {{"<b>Hello World</b>"|safe}} 
+   <em>(renders HTML tags literally, does not escape them)</em></p>
+
+<p><strong>Escape Filter:</strong> {{"<b>Hello World</b>"|escape}} 
+   <em>(escapes HTML tags, shows as plain text)</em></p>
+
+<hr>
+
+<!-- Default Filters -->
+<p><strong>Default Filter:</strong> {{ undefined_variable|default:"No value provided" }} 
+   <em>(if variable is undefined, use this default)</em></p>
+
+<p><strong>Default If None:</strong> {{ none_variable|default_if_none:"Fallback for None" }} 
+   <em>(if variable is None, use this default; ignores empty strings)</em></p>
+
+{% endblock %}
