@@ -8,8 +8,9 @@ def crud(request):
     msg = ""
     form = EmployeeForm(request.POST or None)
     button = request.POST.get("button")
-    visits = request.session.get("visits", 0) + 1
-    request.session["visits"] = visits
+    visits = request.session.get("visits", 0) + 1 # <--- A library that Django gives you to store data per user session.
+    request.session["visits"] = visits # <---- Now we store the updated visit count back into the session.
+    # This ensures that the next time the same user makes a request, request.session.get("visits") will give the new count.
 
     if request.method == "POST":
         # CREATE
@@ -17,8 +18,10 @@ def crud(request):
             if form.is_valid():
                 form.save()
                 msg = "Employee created successfully!"
+                request.session["last_action"] = msg
             else:
                 msg = "Invalid data submitted."
+                request.session["last_action"] = msg
 
         # RETRIEVE
         elif button == "Retrieve":
@@ -27,8 +30,10 @@ def crud(request):
                 emp = EmployeeTable.objects.get(email=email)
                 form = EmployeeForm(instance=emp)
                 msg = f"Record found for {emp.name}"
+                request.session["last_action"] = msg
             except EmployeeTable.DoesNotExist:
                 msg = "Employee not found."
+                request.session["last_action"] = msg
 
         # UPDATE
         elif button == "Update":
@@ -39,8 +44,10 @@ def crud(request):
                 if form.is_valid():
                     form.save()
                     msg = f"{emp.name}'s record updated successfully!"
+                    request.session["last_action"] = msg
             except EmployeeTable.DoesNotExist:
                 msg = "Employee not found for update."
+                request.session["last_action"] = msg
 
         # DELETE
         elif button == "Delete":
@@ -50,8 +57,10 @@ def crud(request):
                 emp.delete()
                 msg = "Employee deleted successfully!"
                 form = EmployeeForm()  # clear form
+                request.session["last_action"] = msg
             except EmployeeTable.DoesNotExist:
                 msg = "Employee not found for deletion."
+                request.session["last_action"] = msg
 
-    return render(request, "crud.html", {"form": form, "msg": msg, "visits": visits})
+    return render(request, "crud.html", {"form": form, "msg": msg, "visits": visits, "last_action": request.session.get("last_action", "")})
 
