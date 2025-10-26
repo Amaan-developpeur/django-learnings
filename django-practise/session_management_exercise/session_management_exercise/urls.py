@@ -16,10 +16,14 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from application1 import views
+from django.shortcuts import redirect
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('crud/', views.crud, name='crud'),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts", lambda request: redirect("login")),
+    path('crud', views.crud, name='crud'),
 ]
